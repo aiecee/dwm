@@ -1,5 +1,5 @@
 diff --git a/config.def.h b/config.def.h
-index 061ad66..3b9ba3a 100644
+index 061ad66..1cf928a 100644
 --- a/config.def.h
 +++ b/config.def.h
 @@ -2,20 +2,23 @@
@@ -82,7 +82,7 @@ index 061ad66..3b9ba3a 100644
  	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
  	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 -	{ MODKEY,                       XK_Return, zoom,           {0} },
-+	{ MODKEYShiftMask,              XK_Return, zoom,           {0} },
++	{ MODKEY|ShiftMask,              XK_Return, zoom,           {0} },
  	{ MODKEY,                       XK_Tab,    view,           {0} },
 -	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
 +	{ MODKEY,                       XK_q,      killclient,     {0} },
@@ -101,6 +101,14 @@ index 061ad66..3b9ba3a 100644
  	TAGKEYS(                        XK_1,                      0)
  	TAGKEYS(                        XK_2,                      1)
  	TAGKEYS(                        XK_3,                      2)
+@@ -103,7 +113,6 @@ static const Button buttons[] = {
+ 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
+ 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
+ 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
+-	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
+ 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
+ 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
+ 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
 diff --git a/drw.c b/drw.c
 index a58a2b4..f8a82f5 100644
 --- a/drw.c
@@ -129,12 +137,12 @@ index 6471431..bdbf950 100644
  Cur *drw_cur_create(Drw *drw, int shape);
 diff --git a/dwm-nixos.diff b/dwm-nixos.diff
 new file mode 100644
-index 0000000..683bae1
+index 0000000..cb0901c
 --- /dev/null
 +++ b/dwm-nixos.diff
 @@ -0,0 +1,78 @@
 +diff --git a/config.def.h b/config.def.h
-+index 061ad66..3b9ba3a 100644
++index 061ad66..1cf928a 100644
 +--- a/config.def.h
 ++++ b/config.def.h
 +@@ -2,20 +2,23 @@
