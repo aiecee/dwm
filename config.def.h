@@ -1,22 +1,22 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const int startwithgaps	     = 1;	 /* 1 means gaps are used by default */
-static const unsigned int gappx     = 5;       /* default gap between windows in pixels */
-static const unsigned int snap      = 32;       /* snap pixel */
-static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 1;        /* 0 means bottom bar */
-static const char font[]            = "monospace:size=10";
-static const char fonts[]           = { font, "monospace:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
-static const char normbgcolor[]       = "#222222";
-static const char normbordercolor[]       = "#444444";
-static const char normfgcolor[]       = "#bbbbbb";
-static const char selfgcolor[]       = "#eeeeee";
-static const char selbordercolor[]        = "#005577";
-static const char selbgcolor[]        = "#005577";
-static const char *colors[][3]      = {
+static unsigned int borderpx  = 1;        /* border pixel of windows */
+static int startwithgaps	     = 1;	 /* 1 means gaps are used by default */
+static unsigned int gappx     = 5;       /* default gap between windows in pixels */
+static unsigned int snap      = 32;       /* snap pixel */
+static int showbar            = 1;        /* 0 means no bar */
+static int topbar             = 1;        /* 0 means bottom bar */
+static char font[]            = "monospace:size=10";
+static const char *fonts[]           = { font };
+static char dmenufont[]       = "monospace:size=10";
+static char normbgcolor[]       = "#222222";
+static char normbordercolor[]       = "#444444";
+static char normfgcolor[]       = "#bbbbbb";
+static char selfgcolor[]       = "#eeeeee";
+static char selbordercolor[]        = "#005577";
+static char selbgcolor[]        = "#005577";
+static char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
 	[SchemeSel]  = { selfgcolor, selbgcolor,  selbordercolor  },
@@ -86,6 +86,8 @@ ResourcePref resources[] = {
 		{ "nmaster",          	INTEGER, &nmaster },
 		{ "resizehints",       	INTEGER, &resizehints },
 		{ "mfact",      	 	FLOAT,   &mfact },
+    { "startwithgaps", INTEGER, &startwithgaps },
+    { "gappx", INTEGER, &gappx },
 };
 
 static const Key keys[] = {
